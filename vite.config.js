@@ -1,9 +1,12 @@
-// vite.config.js
 import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    assetsInlineLimit: 0, // Set to 0 to avoid inline base64 encoding for large files
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      input: "index.html",
+    },
   },
+  publicDir: "public",
   assetsInclude: ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg"],
 });
